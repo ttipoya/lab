@@ -10,18 +10,15 @@ d = {0:'ноль',1:'один',2:'два',3:'три',4:'четыре',5:'пят�
 with open("text.txt") as f:
     for i in f.readline():
         a.append(i)
-print(a)
 b = a[::-1]
 b.count('a')
 n = b.count('a')
-print(n)
 for i in range(len(b)-(n*2)):
     if b[i] == 'a' and b[i+1] != 'a':
         b[i] = b[i] + b[i+1] + b[i+2]
         b[i] = b[i][::-1]
         b.pop(i+1); b.pop(i+1)
 a = b[::-1]
-print(a)
 for i in range(len(a)):
     if len(a[i]) == 1:
         if i != 0:
@@ -30,7 +27,6 @@ for i in range(len(a)):
 for i in range(len(a)):
     if len(a[i]) >= 3:
         c.append(a[i])
-print(c)
 for i in range(len(c)-1):
     if int(c[i],16) > int(c[i+1],16)and m == 0:
         print("Одно из макс чисел:",c[i])
