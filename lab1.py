@@ -22,26 +22,22 @@ while buf:
         else:
             ch2 = ch
         col3+=1
-        if int(ch1,16) > int(ch2,16) and ch1[2] == "A" and ch2[2] == "A":
-            col2 += 1
-            if int(maxi,16) < int(ch1,16) and col ==0:
+        if ch1[2] == 'A':
+            if int(ch1,16) > int(maxi,16) and col == 0:
+                col2 += 1
                 maxi = ch1
-                for j in range(len(maxi)):
+                for n in range(len(maxi)):
                     for l in range(len(d)):
-                        if str(l) == maxi[j]:
+                        if str(l) == maxi[n]:
                             print(d[l], end=' ')
                             break
-                        elif d[l] == maxi[j]:
+                        elif d[l] == maxi[n]:
                             print(d[l], end=' ')
                 print('')
-            if col == 0:
-                col +=1
-            ch1 = ch2
-        elif int(ch1,16) < int(ch2,16):
-            ch1 = ch2
-            col = 0
-            maxi = "0"
-        ch = ''
+        elif ch1[2] != 'A':
+            maxi = '0'
+        ch1= '0'
+        ch= ''
         buf = file.read(1)
 if col2 == 0 and col3 > 0 :
      print("Нужных чисел не найдено")
