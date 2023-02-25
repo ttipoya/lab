@@ -19,7 +19,7 @@ while buf:
             continue
         else:
             ch2 = ch
-        if int(ch1,16) > int(ch2,16) and ch[2] == "A" and ch2[2] == "A":
+        if int(ch1,16) > int(ch2,16) and ch1[2] == "A" and ch2[2] == "A":
             if int(maxi,16) < int(ch1,16) and col ==0:
                 maxi = ch1
                 for j in range(len(maxi)):
