@@ -27,6 +27,8 @@ while buf:
                         elif d[l] == maxi[n]:
                             print(d[l], end=' ')
                 print('')
+            elif int(ch,16) < int(maxi,16):
+                maxi = ch
         elif len(ch) < 3 or ch[-3] != 'A':
             maxi = '0'
         ch= ''
