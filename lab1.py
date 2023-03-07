@@ -1,4 +1,4 @@
-#Шеснадцатиричные числа, у которых 3 справа цифры равна А16 расположенные в порядке убывания. Для каждой такой последовательности максимальное число вывести прописью.
+#
 file = open("text.txt",'r')
 maxi = '0'
 ch = ''
@@ -15,7 +15,7 @@ while buf:
         buf = file.read(1)
     else:
         col+=1
-        if ch[2] == 'A':
+        if len(ch) >=3 and ch[-3] == 'A':
             if int(ch,16) > int(maxi,16):
                 col2 += 1
                 maxi = ch
@@ -27,7 +27,7 @@ while buf:
                         elif d[l] == maxi[n]:
                             print(d[l], end=' ')
                 print('')
-        elif ch[2] != 'A':
+        elif len(ch) < 3 or ch[-3] != 'A':
             maxi = '0'
         ch= ''
         buf = file.read(1)
