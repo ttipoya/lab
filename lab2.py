@@ -14,7 +14,7 @@ while True:
         print("Числа закончились или файл пуст")
         break
     for j in buf:
-        res = re.findall(r'[0-9 A-F]{2}[A][0-9 A-F]*',j)
+        res = re.findall(r'[0-9 A-F]*[A][0-9 A-F]{2}',j)
         if len(res) == 1:
             if int(ch,16) < int(res[0],16):
                 if int(maxi,16) < int(res[0],16):
@@ -33,6 +33,3 @@ while True:
                 maxi = "0"
         elif len(res) == 0:
                 maxi = "0"
-
-
-
